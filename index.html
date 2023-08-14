@@ -18,9 +18,33 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="font-bold bg-[#232323] w-[100vw] h-[100vh] text-[#e4e4e4] pt-[2em] flex flex-col justify-right items-center gap-[1em]">
 
+    <h1 class="text-[#f14770] w-[100%] text-center text-[2em]">Country <span class="text-[#e4e4e4]">Guider</span></h1>
+    <form onsubmit="getCountry(event)" class="flex justify-center items-center p-[0.5em] gap-[1em] w-[90%]">
+        <input required type="search" id="userInput" placeholder="Enter Country Name" class="bg-[#e4e4e4] p-[0.5em] w-[100%] border border-[0px] rounded rounded-[10px] text-[#232323]">
+        <button type="submit" class="bg-[#f14770] text-[#e4e4e4] p-[0.5em] w-[4em] rounded rounded-[10px] border border-[0px]"><h2 class="bi bi-search"></h2></button>
+    </form>
 
+    <h2 class="inst text-[1.5em] h-[100%] flex flex-col justify-center items-center text-[#f14770] w-[100%] p-[1em] text-center">
+        Get Started By<span class="text-[white]"> Enter Country Name</span></h2>
+
+    <div class="result hidden flex flex-col justify-right items-center gap-[2em] w-[100%] pr-[1em] p-[1em]">
+        <img src="" alt="flag" id="flag" class="w-[10em] border border-[2px]">
+        <p class="w-[100%] text-center text-[#fff]">
+            <a class="text-[white]" id="map">See Map</a>
+        </p>
+        <h2 id="name" class="text-[white] w-[100%] text-center text-[1.5em]"></h2>
+        <p class="w-[100%] text-left text-[#f14770]">Official Name : <span class="text-[white]" id="official"></span></p>
+        <p class="w-[100%] text-left text-[#f14770]">Capital : <span class="text-[white]" id="capital"></span></p>
+        <p class="w-[100%] text-left text-[#f14770]">Area : <span class="text-[white]" id="total"></span></p>
+        <p class="w-[100%] text-left text-[#f14770]">Population : <span class="text-[white]" id="population"></span></p>
+        <p class="w-[100%] text-left text-[#f14770]">Languages : <span class="tracking-[1px] text-[white]" id="lang"></span></p>
+        <p class="w-[100%] text-left text-[#f14770]">Region : <span class="text-[white]" id="region"></span></p>
+        <p class="w-[100%] text-left text-[#f14770]">Currency : <span class="text-[white]" id="currency"></span></p>
+        <p class="w-[100%] text-left text-[#f14770]">Time zone : <span class="text-[white]" id="timezone"></span></p>
+        <p class="w-[100%] text-left text-[#f14770]">Borders : <span class="tracking-[1px] text-[white]" id="borders"></span></p>
+    </div>
     <!-- moment js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <!-- sweet alert -->
