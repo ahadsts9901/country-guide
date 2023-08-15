@@ -33,12 +33,27 @@ function getCountry(event) {
             let countryCapital = resp.capital ? Object.values(resp.capital) : "Has No Capital";
             let countryTotalArea = resp.area;
             let countryTotalPopulation = resp.population;
-            let countryLanguage = Object.values(resp.languages);
+            let language = Object.values(resp.languages);
+            let countryLanguage = ""
             let countryRegion = resp.region;
             let countryMap = resp.maps.googleMaps;
             let countryCurrencies = Object.keys(resp.currencies);
-            let countryTimeZone = Object.values(resp.timezones);
+            let timeZone = Object.values(resp.timezones);
+            let countryTimeZone = ""
             let borders = resp.borders;
+            let countryBorders = ""
+
+            for (let i = 0; i < borders.length; i++) {
+                countryBorders += `${borders[i]}, `
+            }
+
+            for (let i = 0; i < timeZone.length; i++) {
+                countryTimeZone += `${timeZone[i]}, `
+            }
+
+            for (let i = 0; i < language.length; i++) {
+                countryLanguage += `${language[i]}, `
+            }
 
             document.querySelector(".result").classList.remove('hidden')
             document.querySelector(".inst").classList.add('hidden')
@@ -53,7 +68,7 @@ function getCountry(event) {
             document.getElementById("map").href = countryMap;
             document.getElementById("currency").innerHTML = countryCurrencies;
             document.getElementById("timezone").innerHTML = countryTimeZone;
-            document.getElementById("borders").innerHTML = borders;
+            document.getElementById("borders").innerHTML = countryBorders;
             return
         } catch {
             Swal.fire({
